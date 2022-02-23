@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="col card shadow">
+        <div class="card-body">
+            <div class="container">
+                <h2 class="card-title mt-3 mb-3 h3">My Reservation</h2>
+            </div>
+            <div class="container">
+                <table class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Stie Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Reservation Date</th>
+                            <th scope="col">Creation Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each result}}
+                        <tr class="clickable-row" id="{{this.siteId}}" data-href="../../vaccineInjectionSite/{{this.siteId}}">
+                            <td>{{this.siteName}}</td>
+                            <td>{{this.siteAddress.addressLine}}, {{this.siteAddress.city}}</td>
+                            <td>{{this.date}}</td>
+                            <td>{{this.time}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="container m-5" id="no-result" hidden="">
+                <p><span class="fa fa-exclamation-circle">&#0160;</span>No reservation found.</p>
+            </div>
+        </div>
+    </div>
+</div>
